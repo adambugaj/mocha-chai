@@ -1,0 +1,26 @@
+    <section class="suite">
+      <h1>Sanitize</h1>
+      <dl>
+hello world
+hello world
+hello world
+hello world
+hello world
+        <dt>returns lowercase of a string</dt>
+        <dd><pre><code>let word = &#x27;Hello World&#x27;;
+expect(sanitize(word)).to.equal(&#x27;hello world&#x27;);
+expect(sanitize(word)).not.to.equal(&#x22;words&#x22;);
+expect(sanitize(word)).to.be.a(&#x27;string&#x27;);
+expect(sanitize(word)).not.to.be.a(&#x27;number&#x27;);
+expect(sanitize(word)).to.contain(&#x27;world&#x27;)</code></pre></dd>
+hello world
+        <dt>it should remove any hyphen from a string</dt>
+        <dd><pre><code>let word = &#x27;Hello-World&#x27;;
+let result = &#x27;hello world&#x27;;
+let sanitizeFunc = sanitize(word);
+
+expect(sanitizeFunc).to.equal(result);
+expect(sanitizeFunc).to.not.equal(&#x27;Hello-World&#x27;);
+expect(sanitizeFunc).not.to.contain(&#x27;-&#x27;);</code></pre></dd>
+      </dl>
+    </section>
